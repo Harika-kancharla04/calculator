@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display">
+        <table class="container">
+            <tr>
+                <td><button onclick="clearInput()">AC</button></td>
+                <td><button onclick="todisplay('%')">%</button></td>
+                <td><button onclick="clr()" class="clearInput">C</button></td>
+                <td><button onclick="todisplay('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="todisplay('7')">7</button></td>
+                <td><button onclick="todisplay('8')">8</button></td>
+                <td><button onclick="todisplay('9')">9</button></td>
+                <td><button onclick="todisplay('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="todisplay('4')">4</button></td>
+                <td><button onclick="todisplay('5')">5</button></td>
+                <td><button onclick="todisplay('6')">6</button></td>
+                <td><button onclick="todisplay('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="todisplay('1')">1</button></td>
+                <td><button onclick="todisplay('2')">2</button></td>
+                <td><button onclick="todisplay('3')">3</button></td>
+                <td><button onclick="todisplay('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="todisplay('0')">0</button></td>
+                <td><button onclick="todisplay('.')">.</button></td>
+                <td colspan="2"><button onclick="calculate()" class="calc">=</button></td>
+                
+            </tr>
+        
+        </table>
+    </div>
+
+
+
+
+    <script>
+        const display=document.getElementById("display")
+
+        function todisplay(val){
+            display.value+=val;
+            
+        }
+        function clearInput(){
+            display.value=""
+        }
+
+        function calculate(){
+            
+            display.value=eval(display.value)
+        }
+        function clr(){
+            display.value=(display.value).slice(0,(display.value).length-1)
+
+        }
+        
+
+
+    </script>
+</body>
+</html>
